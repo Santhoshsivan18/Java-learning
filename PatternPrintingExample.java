@@ -1,136 +1,239 @@
 public class PatternPrintingExample {
     public static void main(String[] args) {
-        // Basic Patterns
-        System.out.println("1. Simple Patterns:");
-        printSimplePattern(5);
+        int n;
 
-        // Right-Angled Triangles
-        System.out.println("\n2. Right-Angled Triangles:");
-        printRightAngledTriangle(5);
-        printInvertedRightAngledTriangle(5);
+        /*
+         * 
+         * i - no.of rows , outer loop
+         * j - no.of columns , inner loop
+         * either use index(i->rows,j->cols) as 0 or 1 (1 is more preferrable)
+         * 
+         * for index=0 ; for(int i=0;i<n;i++) ; i=0,1,2,3,4 ; for n=5
+         * 
+         * for index=1 ; for(int i=1;i<=n;i++) ; i=1,2,3,4,5 ; for n=5
+         * 
+         * How to approach pattern based qns
+         * 1) no.of lines = no.of rows (i.e) no.of times outer loop will run
+         * 2) identify in each row
+         * -> how many columns are there
+         * -> types of elements in the column
+         * 3) what do u need to print
+         * Note : Try to find the formula relating the rows and cols
+         * 
+         */
 
-        // Pyramids
-        System.out.println("\n3. Pyramids:");
-        printPyramid(5);
-        printInvertedPyramid(5);
+        n = 5;
+        System.out.println("1. Square Pattern");
+        for (int rows = 1; rows <= n; rows++) {
+            for (int cols = 1; cols <= n; cols++) {
+                System.out.print("* ");
+            }
+            // when each row is printed the control needs to goto the next line
+            System.out.println();
+        }
+        System.out.println();
 
-        // Diamond Pattern
-        System.out.println("\n4. Diamond Pattern:");
-        printDiamond(5);
+        System.out.println("2. Left Sided Triangle Pattern");
+        System.out.println();
 
-        // Hollow Pyramid
-        System.out.println("\n5. Hollow Pyramid:");
-        printHollowPyramid(5);
-
-        // Floyd's Triangle
-        System.out.println("\n6. Floyd's Triangle:");
-        printFloydsTriangle(4);
-
-        // Pascal's Triangle
-        System.out.println("\n7. Pascal's Triangle:");
-        printPascalsTriangle(5);
-    }
-
-    // Method to print a simple pattern
-    private static void printSimplePattern(int n) {
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= i; j++) {
+        n = 5;
+        System.out.println("2.1 Left Sided Triangle Pattern with *");
+        for (int rows = 1; rows <= n; rows++) {
+            for (int cols = 1; cols <= rows; cols++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
-    }
+        System.out.println();
 
-    // Method to print a right-angled triangle
-    private static void printRightAngledTriangle(int n) {
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= i; j++) {
+        System.out.println("2.2 Left Sided Triangle Pattern with numbers");
+
+        System.out.println();
+        n = 5;
+        System.out.println("2.2.1 Left Sided Triangle Pattern with numbers with cols in inner loop");
+        for (int rows = 1; rows <= n; rows++) {
+            for (int cols = 1; cols <= rows; cols++) {
+                System.out.print(cols + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+        n = 5;
+        System.out.println("2.2.2 Left Sided Triangle Pattern with numbers with rows in inner loop");
+        for (int rows = 1; rows <= n; rows++) {
+            for (int cols = 1; cols <= rows; cols++) {
+                System.out.print(rows + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        n = 5;
+        System.out.println("3. Inverted Left Triangle Pattern");
+        for (int rows = 1; rows <= n; rows++) {
+            // for (int cols = 1; cols <= (n - rows) + 1; cols++) {
+            // for (int cols = 1; cols <= (n + 1) - rows; cols++) {
+            for (int cols = rows; cols <= n; cols++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
-    }
+        System.out.println();
 
-    // Method to print an inverted right-angled triangle
-    private static void printInvertedRightAngledTriangle(int n) {
-        for (int i = n; i >= 1; i--) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print("* ");
-            }
-            System.out.println();
-        }
-    }
-
-    // Method to print a pyramid
-    private static void printPyramid(int n) {
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n - i; j++) {
+        n = 5;
+        System.out.println("4. Right Sided Triangle Pattern");
+        for (int rows = 1; rows <= n; rows++) {
+            for (int cols = rows; cols < n; cols++) {
                 System.out.print("  ");
             }
-            for (int k = 1; k <= 2 * i - 1; k++) {
+            for (int cols = 1; cols <= rows; cols++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
-    }
+        System.out.println();
 
-    // Method to print an inverted pyramid
-    private static void printInvertedPyramid(int n) {
-        for (int i = n; i >= 1; i--) {
-            for (int j = 1; j <= n - i; j++) {
+        n = 5;
+        System.out.println("5. Inverted Right Triangle Pattern");
+        for (int rows = 1; rows <= n; rows++) {
+            for (int cols = 1; cols < rows; cols++) {
                 System.out.print("  ");
             }
-            for (int k = 1; k <= 2 * i - 1; k++) {
+            for (int cols = rows; cols <= n; cols++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
-    }
+        System.out.println();
 
-    // Method to print a diamond pattern
-    private static void printDiamond(int n) {
-        printPyramid(n);
-        printInvertedPyramid(n - 1);
-    }
-
-    // Method to print a hollow pyramid
-    private static void printHollowPyramid(int n) {
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n - i; j++) {
+        n = 5;
+        System.out.println("6. Pyramid or Hill Pattern");
+        for (int rows = 1; rows <= n; rows++) {
+            for (int cols = rows; cols < n; cols++) {
                 System.out.print("  ");
             }
-            for (int k = 1; k <= 2 * i - 1; k++) {
-                if (k == 1 || k == 2 * i - 1 || i == n) {
-                    System.out.print("* ");
-                } else {
-                    System.out.print("  ");
-                }
+            for (int cols = 1; cols < rows; cols++) {
+                System.out.print("* ");
+            }
+            for (int cols = 1; cols <= rows; cols++) {
+                System.out.print("* ");
             }
             System.out.println();
         }
-    }
+        System.out.println();
 
-    // Method to print Floyd's Triangle
-    private static void printFloydsTriangle(int n) {
-        int count = 1;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print(count + " ");
-                count++;
+        n = 5;
+        System.out.println("7. Inverted Pyramid or Hill Pattern");
+        for (int rows = 1; rows <= n; rows++) {
+            for (int cols = 1; cols < rows; cols++) {
+                System.out.print("  ");
+            }
+            for (int cols = rows; cols < n; cols++) {
+                System.out.print("* ");
+            }
+            for (int cols = rows; cols <= n; cols++) {
+                System.out.print("* ");
             }
             System.out.println();
         }
-    }
+        System.out.println();
 
-    // Method to print Pascal's Triangle
-    private static void printPascalsTriangle(int n) {
-        for (int i = 0; i < n; i++) {
-            int number = 1;
-            for (int j = 0; j <= i; j++) {
-                System.out.print(number + " ");
-                number = number * (i - j) / (j + 1);
+        n = 5;
+        System.out.println("8. Diamond Pattern");
+        System.out.println("8.1 1st variation Diamond Pattern");
+        for (int rows = 1; rows < n; rows++) {
+            for (int cols = rows; cols <= n; cols++) {
+                System.out.print("  ");
+            }
+            for (int cols = 1; cols < rows; cols++) {
+                System.out.print("* ");
+            }
+            for (int cols = 1; cols <= rows; cols++) {
+                System.out.print("* ");
             }
             System.out.println();
         }
+        for (int rows = 1; rows <= n; rows++) {
+            for (int cols = 1; cols <= rows; cols++) {
+                System.out.print("  ");
+            }
+            for (int cols = rows; cols < n; cols++) {
+                System.out.print("* ");
+            }
+            for (int cols = rows; cols <= n; cols++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        n=5;
+        System.out.println("8.2 2nd variation Diamond Pattern");
+        for (int rows = 1; rows <= (n * 2) - 1; rows++) {
+            int cols = rows > n ? (n * 2) - rows : rows;
+            int spaces = n - cols;
+            for (int j = 0; j < spaces; j++){
+                System.out.print("  ");
+            }
+            for (int j = 0; j < cols; j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        /*
+         * * * * *
+         * * *
+         *
+         * * *
+         * * * * *
+         * 
+         * 
+         * n = 5;
+         * System.out.println("9. Hourglass Pattern");
+         * 
+         * System.out.println("1st Variation");
+         * for (int rows = 0; rows < n; rows++) {
+         * int k=1;
+         * int cols = rows > n/2 ? : n - (rows * k);
+         * int t = rows > n ? (2*n - rows) - 1 : rows - 1;
+         * for (int spaces = 0; spaces < t; spaces++) {
+         * System.out.print(" ");
+         * }
+         * for (int j = 1; j <= cols; j++) {
+         * System.out.print("* ");
+         * }
+         * System.out.println();
+         * k++;
+         * }
+         * 
+         */
+        System.out.println("9. Hourglass Pattern");
+
+        System.out.println("2nd Variation");
+        for (int rows = 1; rows < (n * 2); rows++) {
+            int cols = rows > n ? (rows - n) + 1 : (n - rows) + 1;
+            int t = rows > n ? (2 * n - rows) - 1 : rows - 1;
+            for (int spaces = 0; spaces < t; spaces++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= cols; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        n = 5;
+        System.out.println("10. Diamond of Stars Pattern / Double Pyramid Pattern / Sandglass Star Pattern Pattern");
+        for (int rows = 1; rows <= (n * 2) - 1; rows++) {
+            int cols = rows > n ? (n * 2) - rows : rows;
+            for (int j = 1; j <= cols; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 }

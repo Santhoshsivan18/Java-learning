@@ -1,3 +1,11 @@
-int Ssum = String.valueOf(sum+3).chars().map(Character::getNumericValue).sum();
-        int Psum = String.valueOf(sum+8).chars().map(Character::getNumericValue).sum();
-        int SPsum = String.valueOf(sum+11).chars().map(Character::getNumericValue).sum();
+n = 5;
+        System.out.println("9. Hourglass Pattern");
+        for (int i = 1; i < (n*2); i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print("* ");
+            }
+            for (int j = 1; j <= n; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
