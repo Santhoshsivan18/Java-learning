@@ -16,10 +16,12 @@ public class collection {
         }
 
         // list.forEach(System.out::println);
-        
-        /*for (String s : list) {
-            System.out.print(s + " ");
-        }*/
+
+        /*
+         * for (String s : list) {
+         * System.out.print(s + " ");
+         * }
+         */
 
         System.out.println();
         System.out.println("LinkedList");
@@ -96,7 +98,7 @@ public class collection {
         HashSet<String> set = new HashSet<String>();
         set.add("Ravi");
         set.add("Vijay");
-        set.add(" ");
+        set.add("Ravi");
         set.add("Ajay");
         itr = set.iterator();
         while (itr.hasNext()) {
@@ -108,7 +110,7 @@ public class collection {
         LinkedHashSet<String> set1 = new LinkedHashSet<String>();
         set1.add("Ravi");
         set1.add("Vijay");
-        set1.add(" ");
+        set1.add("Ravi");
         set1.add("Ajay");
         itr = set1.iterator();
         while (itr.hasNext()) {
@@ -125,6 +127,41 @@ public class collection {
         itr = set2.iterator();
         while (itr.hasNext()) {
             System.out.println(itr.next());
+        }
+
+        System.out.println();
+        HashMap<Integer,String> map=new HashMap<Integer,String>();   
+        map.put(1,"Mango");  
+        map.put(2,"Apple");    
+        map.put(3,"Banana");   
+        map.put(4,"Grapes");   
+        // Set set3=map.entrySet();//Converting to Set so that we can traverse
+        // while(itr.hasNext()){
+        // //Converting to Map.Entry so that we can get key and value separately
+        // Map.Entry entry=(Map.Entry)itr.next();
+        // System.out.println(entry.getKey()+" "+entry.getValue());
+        // }
+        for (Integer s : map.keySet()) {
+            System.out.println(s + " " + map.get(s));
+        }
+
+        System.out.println();
+        LinkedHashMap<Integer,String> hm=new LinkedHashMap<Integer,String>();  
+        hm.put(100,"Amit");  
+        hm.put(101,"Vijay");  
+        hm.put(102,"Rahul");  
+        for (Integer s : hm.keySet()) {
+            System.out.println(s + " " + hm.get(s));
+        }
+
+        System.out.println();
+        TreeMap<Integer,String> m1=new TreeMap<Integer,String>();    
+        m1.put(100,"Amit");    
+        m1.put(102,"Ravi");    
+        m1.put(101,"Vijay");    
+        m1.put(103,"Rahul");    
+        for (Integer s : m1.keySet()) {
+            System.out.println(s + " " + m1.get(s));
         }
     }
 }
