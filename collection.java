@@ -1,4 +1,17 @@
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Stack;
+import java.util.TreeMap;
+import java.util.TreeSet;
+import java.util.Vector;
 
 public class collection {
     public static void main(String[] args) {
@@ -130,11 +143,11 @@ public class collection {
         }
 
         System.out.println();
-        HashMap<Integer,String> map=new HashMap<Integer,String>();   
-        map.put(1,"Mango");  
-        map.put(2,"Apple");    
-        map.put(3,"Banana");   
-        map.put(4,"Grapes");   
+        HashMap<Integer, String> map = new HashMap<Integer, String>();
+        map.put(1, "Mango");
+        map.put(2, "Apple");
+        map.put(3, "Banana");
+        map.put(4, "Grapes");
         // Set set3=map.entrySet();//Converting to Set so that we can traverse
         // while(itr.hasNext()){
         // //Converting to Map.Entry so that we can get key and value separately
@@ -146,20 +159,20 @@ public class collection {
         }
 
         System.out.println();
-        LinkedHashMap<Integer,String> hm=new LinkedHashMap<Integer,String>();  
-        hm.put(100,"Amit");  
-        hm.put(101,"Vijay");  
-        hm.put(102,"Rahul");  
+        LinkedHashMap<Integer, String> hm = new LinkedHashMap<Integer, String>();
+        hm.put(100, "Amit");
+        hm.put(101, "Vijay");
+        hm.put(102, "Rahul");
         for (Integer s : hm.keySet()) {
             System.out.println(s + " " + hm.get(s));
         }
 
         System.out.println();
-        TreeMap<Integer,String> m1=new TreeMap<Integer,String>();    
-        m1.put(100,"Amit");    
-        m1.put(102,"Ravi");    
-        m1.put(101,"Vijay");    
-        m1.put(103,"Rahul");    
+        TreeMap<Integer, String> m1 = new TreeMap<Integer, String>();
+        m1.put(100, "Amit");
+        m1.put(102, "Ravi");
+        m1.put(101, "Vijay");
+        m1.put(103, "Rahul");
         for (Integer s : m1.keySet()) {
             System.out.println(s + " " + m1.get(s));
         }
