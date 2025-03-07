@@ -1,11 +1,14 @@
-class Sorting {
+
+public class Sorting {
+
+    // Optimized Selection Sort
+    // Time Complexity: O(n^2)
+    // Space Complexity: O(1)
     public static void SelectionSort(int arr[]) {
         for (int i = 0; i < arr.length - 1; i++) {
-            int min_value = arr[i];
             int min_index = i;
             for (int j = i + 1; j < arr.length; j++) {
-                if (min_value > arr[j]) {
-                    min_value = arr[j];
+                if (arr[j] < arr[min_index]) {
                     min_index = j;
                 }
             }
@@ -15,18 +18,29 @@ class Sorting {
         }
     }
 
+    // Optimized Bubble Sort
+    // Time Complexity: O(n^2) in worst case, O(n) in best case
+    // Space Complexity: O(1)
     public static void BubbleSort(int arr[]) {
+        boolean swapped;
         for (int i = 0; i < arr.length - 1; i++) {
+            swapped = false;
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
+                    swapped = true;
                 }
             }
+            if (!swapped)
+                break; // Array is sorted
         }
     }
 
+    // Optimized Insertion Sort
+    // Time Complexity: O(n^2) in worst case, O(n) in best case
+    // Space Complexity: O(1)
     public static void InsertionSort(int arr[]) {
         for (int i = 1; i < arr.length; i++) {
             int key = arr[i];
@@ -39,43 +53,37 @@ class Sorting {
         }
     }
 
+    // Display Array
     public static void display(int arr[]) {
         for (int i : arr) {
             System.out.print(i + " ");
         }
+        System.out.println();
     }
 
+    // Optimized Sort (Selection Sort)
+    // Time Complexity: O(n^2)
+    // Space Complexity: O(1)
     public static void sort(int arr[]) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] > arr[j]) {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
-            }
-        }
+        SelectionSort(arr); // Reusing SelectionSort for consistency
     }
 
+    // Merge function for Merge Sort
+    // Time Complexity: O(n)
+    // Space Complexity: O(n)
     public static void merge(int a[], int beg, int mid, int end) {
-        int i, j, k;
         int n1 = mid - beg + 1;
         int n2 = end - mid;
 
-        /* temporary Arrays */
         int LeftArray[] = new int[n1];
         int RightArray[] = new int[n2];
 
-        /* copy data to temp arrays */
-        for (i = 0; i < n1; i++)
+        for (int i = 0; i < n1; i++)
             LeftArray[i] = a[beg + i];
-        for (j = 0; j < n2; j++)
+        for (int j = 0; j < n2; j++)
             RightArray[j] = a[mid + 1 + j];
 
-        i = 0; /* initial index of first sub-array */
-        j = 0; /* initial index of second sub-array */
-        k = beg; /* initial index of merged sub-array */
-
+        int i = 0, j = 0, k = beg;
         while (i < n1 && j < n2) {
             if (LeftArray[i] <= RightArray[j]) {
                 a[k] = LeftArray[i];
@@ -91,7 +99,6 @@ class Sorting {
             i++;
             k++;
         }
-
         while (j < n2) {
             a[k] = RightArray[j];
             j++;
@@ -99,6 +106,9 @@ class Sorting {
         }
     }
 
+    // Optimized Merge Sort
+    // Time Complexity: O(n log n)
+    // Space Complexity: O(n)
     public static void mergeSort(int a[], int beg, int end) {
         if (beg < end) {
             int mid = (beg + end) / 2;
@@ -108,12 +118,10 @@ class Sorting {
         }
     }
 
-    /* function to implement quick sort */
-    public static void quickSort(int arr[], int lowIndex, int highIndex) /*
-                                                                          * a[] = array to be sorted, start = Starting
-                                                                          * index, end = Ending index
-                                                                          */
-    {
+    // Optimized Quick Sort
+    // Time Complexity: O(n log n) on average, O(n^2) in worst case
+    // Space Complexity: O(log n) due to recursion stack
+    public static void quickSort(int arr[], int lowIndex, int highIndex) {
         if (lowIndex >= highIndex) {
             return;
         }
@@ -138,6 +146,7 @@ class Sorting {
         quickSort(arr, leftPointer + 1, highIndex);
     }
 
+    // Swap function
     public static void swap(int arr[], int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];

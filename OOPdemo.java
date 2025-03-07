@@ -1,3 +1,27 @@
+/* OOPS
+1) Classes - Blueprint of objects; collection of methods & attributes
+
+2) Objects - Instance of a class; represents real-world entities; can access classes using objects.
+
+3) Abstraction - Hiding irrelevant details/data; hiding the code complexity
+    abstract - partial hiding/complete hiding(flexible)
+    interface - complete hiding only(fixed)
+    class-class, interface-interface = extends
+    class-interface=implements
+
+4) Encapsulation - Binding data & methods into a class; hiding the internal working.
+
+5) Polymorphism - The ability of an object to be present in more than 1 form.
+    5.1)Method Overloading - compile time(static polymorphism), same name-diff parameters
+    5.2)Method Overriding - run time(dynamic polymorphism), same name-same parameters
+
+6) Inheritance - The process of inheriting properties & behaviours from another class.
+    6.1)Single Level Inheritance - Single parent-single child
+    6.2)Hierarchical Inheritance - Single parent-single child
+    6.3)Multi-level Inheritance - Single grandparent-Single parent-single child
+    6.4)Multiple Inheritance - Dual parent-Single child
+    6.5)Hybrid Inheritance */
+
 // Main class to demonstrate all OOPS concepts
 public class OOPdemo {
 
@@ -10,12 +34,12 @@ public class OOPdemo {
         // Abstraction demonstration with class and method
         Dog dog = new Dog();
         dog.makeSound(); // Dog's implementation of makeSound()
-        dog.eat();       // Inherited method
-        dog.run();       // Method from the Animal interface
+        dog.eat(); // Inherited method
+        dog.run(); // Method from the Animal interface
 
         // Inheritance demonstration
         Animal animal = new Dog();
-        animal.eat();    // Inherited method
+        animal.eat(); // Inherited method
         animal.makeSound(); // Overridden method in Dog class
 
         // Polymorphism demonstration (method overriding)
@@ -58,7 +82,7 @@ class Person {
 }
 
 // Abstraction
-abstract class Animal { 
+abstract class Animal {
     // Abstract method (does not have a body)
     public abstract void makeSound();
 

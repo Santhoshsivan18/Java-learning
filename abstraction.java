@@ -32,6 +32,7 @@ class Cat extends Animal {
 		super(name);
 	}
 
+    @Override
 	public void makeSound() {
 		System.out.println(getName() + " meows");
 	}
