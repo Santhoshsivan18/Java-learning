@@ -2,7 +2,7 @@ import java.util.*;
 
 public class namefinder {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         HashMap<Character, Integer> hashmap = new HashMap<>();
         hashmap.put('A', 1);
         hashmap.put('B', 2);
@@ -42,32 +42,39 @@ public class namefinder {
             }
         }
 
-        // System.out.println("Sum of values for characters in the string without S/P: " + sum);
-        // System.out.println("Sum of values for characters in the string with initial S: " + (sum + 3));
-        // System.out.println("Sum of values for characters in the string with initial P: " + (sum + 8));
-        // System.out.println("Sum of values for characters in the string with initial S & P: " + (sum + 11));
+        // System.out.println("Sum of values for characters in the string without S/P: "
+        // + sum);
+        // System.out.println("Sum of values for characters in the string with initial
+        // S: " + (sum + 3));
+        // System.out.println("Sum of values for characters in the string with initial
+        // P: " + (sum + 8));
+        // System.out.println("Sum of values for characters in the string with initial S
+        // & P: " + (sum + 11));
 
         int Ssum = String.valueOf(sum + 3).chars().map(Character::getNumericValue).sum();
         int Psum = String.valueOf(sum + 8).chars().map(Character::getNumericValue).sum();
         int SPsum = String.valueOf(sum + 11).chars().map(Character::getNumericValue).sum();
-        // System.out.println(Ssum+" "+Psum+" "+SPsum);
-
+        // System.out.println(Ssum + " " + Psum + " " + SPsum);
+        boolean flag = false;
         if (Ssum == 6 || Ssum == 9) {
+            flag = true;
             System.out.println();
             System.out.println("S." + inputString);
             System.out.println();
         }
         if (Psum == 6 || Psum == 9) {
+            flag = true;
             System.out.println();
             System.out.println("P." + inputString);
             System.out.println();
         }
         if (SPsum == 6 || SPsum == 9) {
+            flag = true;
             System.out.println();
             System.out.println("S.P." + inputString);
             System.out.println();
-        } 
-        else {
+        }
+        if (!flag) {
             System.out.println();
             System.out.println("It's not suitable. Try another name");
             System.out.println();

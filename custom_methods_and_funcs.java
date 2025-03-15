@@ -1,6 +1,5 @@
 
 // import java.awt.*;
-import java.util.*;
 
 public class custom_methods_and_funcs {
     // public static void main(String[] args) {

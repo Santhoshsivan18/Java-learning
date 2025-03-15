@@ -8,19 +8,22 @@
     interface - complete hiding only(fixed)
     class-class, interface-interface = extends
     class-interface=implements
+    interface - rules of the game and classes - the players that abide by those rules while adding their unique style.
 
 4) Encapsulation - Binding data & methods into a class; hiding the internal working.
+    use get,set methods - for private access modifiers
 
 5) Polymorphism - The ability of an object to be present in more than 1 form.
-    5.1)Method Overloading - compile time(static polymorphism), same name-diff parameters
-    5.2)Method Overriding - run time(dynamic polymorphism), same name-same parameters
+    5.1)Method Overloading - compile time(static polymorphism), same function/method name-diff parameters
+    5.2)Method Overriding - run time(dynamic polymorphism), same function/method name-same parameters, implemented using interfaces
 
 6) Inheritance - The process of inheriting properties & behaviours from another class.
     6.1)Single Level Inheritance - Single parent-single child
-    6.2)Hierarchical Inheritance - Single parent-single child
+    6.2)Hierarchical Inheritance - Single parent-single child(1 parent - 2 children, 2 parent - 4 children)
     6.3)Multi-level Inheritance - Single grandparent-Single parent-single child
     6.4)Multiple Inheritance - Dual parent-Single child
-    6.5)Hybrid Inheritance */
+    6.5)Hybrid Inheritance - combines different inheritance types, like single, multiple, and hierarchical, within one structure.
+*/
 
 // Main class to demonstrate all OOPS concepts
 public class OOPdemo {
@@ -35,20 +38,21 @@ public class OOPdemo {
         Dog dog = new Dog();
         dog.makeSound(); // Dog's implementation of makeSound()
         dog.eat(); // Inherited method
-        dog.run(); // Method from the Animal interface
+        dog.run(); // Method from the CanRun interface
 
         // Inheritance demonstration
         Animal animal = new Dog();
         animal.eat(); // Inherited method
-        animal.makeSound(); // Overridden method in Dog class
+        animal.makeSound(); // OverrCaridden method in Dog class
 
         // Polymorphism demonstration (method overriding)
         Animal myDog = new Dog();
         myDog.makeSound(); // Dog's implementation of makeSound()
 
         // Composition demonstration
+        // Composition is about having a "whole" (like a car) that contains parts (like an engine), and using them directly.
         Car car = new Car();
-        car.start();
+        car.startCar();
 
         // Method Overloading demonstration
         MathOperations mathOps = new MathOperations();
@@ -70,15 +74,16 @@ public class OOPdemo {
 class Person {
     private String name; // Private variable
 
+    // Public setter method
+    public void setName(String name) {
+        this.name = name;
+    }
+
     // Public getter method
     public String getName() {
         return name;
     }
 
-    // Public setter method
-    public void setName(String name) {
-        this.name = name;
-    }
 }
 
 // Abstraction
@@ -124,8 +129,9 @@ class Car {
         this.engine = new Engine();
     }
 
-    public void start() {
+    public void startCar() {
         engine.start(); // Delegation
+        // Delegation is about passing off tasks (like starting the engine) to another object (like the engine) to perform, instead of doing the task yourself.
         System.out.println("Car starts");
     }
 }

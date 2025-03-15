@@ -61,14 +61,14 @@ class BookStall {
     }
 
     void SearchForBook(String title, int stock) {
-        if (title == Booktitle && stock >= Bookstock) {
+        if (title.equals(Booktitle) && stock >= Bookstock) {
             System.out.println();
             System.out.print("Book is available with sufficient stock");
             double cost = Bookcost * stock;
             System.out.println();
             System.out.print("BillCost:" + cost);
             System.out.println();
-        } else if(title == Booktitle && stock < Bookstock ){
+        } else if(title.equals(Booktitle) && stock < Bookstock ){
             System.out.println();
             System.out.print("Book is available but with insufficient stock");
             System.out.println();

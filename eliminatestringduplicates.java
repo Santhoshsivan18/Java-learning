@@ -25,7 +25,7 @@ public class eliminatestringduplicates {
                 h.add(c);
             }
         }
-        System.out.println(ans.toString());
+        System.out.println("Answer:"+ans.toString());
 
     }
 }

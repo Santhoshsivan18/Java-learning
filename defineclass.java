@@ -1,6 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class defineclass {
     public static void main(String[] args) {
         // store 5 roll nos

@@ -72,9 +72,12 @@ public class digitmanipulation {
         // Sum of Digits from left to right
         tempNumber = number;
         int sumLeftToRight = 0;
-        while (tempNumber > 0) {
-            sumLeftToRight += tempNumber % 10;
-            tempNumber /= 10;
+        int length = (int) Math.log10(number) + 1; // Length of the number
+        for (int i = length - 1; i >= 0; i--) {
+            // System.out.println(tempNumber / Math.pow(10, i));
+            // System.out.println((tempNumber / Math.pow(10, i))%10);
+            digit = (int) (tempNumber / Math.pow(10, i)) % 10;
+            sumLeftToRight += digit;
         }
         System.out.println("Sum of digits (left to right): " + sumLeftToRight);
     }
