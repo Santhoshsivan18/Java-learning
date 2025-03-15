@@ -1,4 +1,3 @@
-import java.util.*;
 /*Here X = 645 and Y = 656.
 To get the minimum possible sum,
 X can be modified as 545.
@@ -16,11 +15,13 @@ public class minsum_maxsum {
         int[] a = new int[(int) Math.log10(x) + 1];
         int[] b = new int[(int) Math.log10(y) + 1];
 
-        for(int i=0;i<a.length;i++){
-            if(a[i]==6){a[i]=swap(a[i]);}
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == 6) {
+                a[i] = swap(a[i]);
+            }
         }
-        for(int i=0;i<b.length;i++){
-            
+        for (int i = 0; i < b.length; i++) {
+
         }
     }
 

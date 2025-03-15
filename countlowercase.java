@@ -14,5 +14,6 @@ public class countlowercase {
             }
         }
         System.out.println(c);
+        sc.close();
     }
 }

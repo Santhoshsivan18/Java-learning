@@ -4,8 +4,8 @@ public class Anagramstring {
             Scanner sc=new Scanner(System.in);
             String s1=sc.nextLine();
             String s2=sc.nextLine();
-            HashMap<Character, Integer> m1=new HashMap<Character, Integer>();
-            HashMap<Character, Integer> m2=new HashMap<Character, Integer>();
+            HashMap<Character, Integer> m1=new HashMap<>();
+            HashMap<Character, Integer> m2=new HashMap<>();
             if(s1.length()!=s2.length()){
                 System.out.println("Not anagram");
             }else{

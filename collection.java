@@ -38,7 +38,7 @@ public class collection {
 
         System.out.println();
         System.out.println("LinkedList");
-        LinkedList<String> al = new LinkedList<String>();
+        LinkedList<String> al = new LinkedList<>();
         al.add("Ravi");
         al.add("Vijay");
         al.add("Ravi");
@@ -62,7 +62,7 @@ public class collection {
 
         System.out.println();
         System.out.println("Stack");
-        Stack<String> stack = new Stack<String>();
+        Stack<String> stack = new Stack<>();
         stack.push("Ayush");
         stack.push("Garvit");
         stack.push("Amit");
@@ -76,7 +76,7 @@ public class collection {
 
         System.out.println();
         System.out.println("Priority Queue");
-        PriorityQueue<String> queue = new PriorityQueue<String>();
+        PriorityQueue<String> queue = new PriorityQueue<>();
         queue.add("Amit Sharma");
         queue.add("Vijay Raj");
         queue.add("JaiShankar");
@@ -98,7 +98,7 @@ public class collection {
 
         System.out.println();
         System.out.println("ArrayDeque");
-        Deque<String> deque = new ArrayDeque<String>();
+        Deque<String> deque = new ArrayDeque<>();
         deque.add("Gautam");
         deque.add("Karan");
         deque.add("Ajay");
@@ -108,7 +108,7 @@ public class collection {
 
         System.out.println();
         System.out.println("Hashset");
-        HashSet<String> set = new HashSet<String>();
+        HashSet<String> set = new HashSet<>();
         set.add("Ravi");
         set.add("Vijay");
         set.add("Ravi");
@@ -120,7 +120,7 @@ public class collection {
 
         System.out.println();
         System.out.println("LinkedHashSet");
-        LinkedHashSet<String> set1 = new LinkedHashSet<String>();
+        LinkedHashSet<String> set1 = new LinkedHashSet<>();
         set1.add("Ravi");
         set1.add("Vijay");
         set1.add("Ravi");
@@ -132,7 +132,7 @@ public class collection {
 
         System.out.println();
         System.out.println("TreeSet");
-        TreeSet<String> set2 = new TreeSet<String>();
+        TreeSet<String> set2 = new TreeSet<>();
         set2.add("Ravi");
         set2.add("Vijay");
         set2.add("Ravi");
@@ -143,7 +143,7 @@ public class collection {
         }
 
         System.out.println();
-        HashMap<Integer, String> map = new HashMap<Integer, String>();
+        HashMap<Integer, String> map = new HashMap<>();
         map.put(1, "Mango");
         map.put(2, "Apple");
         map.put(3, "Banana");

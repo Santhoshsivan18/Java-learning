@@ -3,15 +3,15 @@ public class PatternPrintingExample {
         int n;
 
         /*
-         * 
+         *
          * i - no.of rows , outer loop
          * j - no.of columns , inner loop
          * either use index(i->rows,j->cols) as 0 or 1 (1 is more preferrable)
-         * 
+         *
          * for index=0 ; for(int i=0;i<n;i++) ; i=0,1,2,3,4 ; for n=5
-         * 
+         *
          * for index=1 ; for(int i=1;i<=n;i++) ; i=1,2,3,4,5 ; for n=5
-         * 
+         *
          * How to approach pattern based qns
          * 1) no.of lines = no.of rows (i.e) no.of times outer loop will run
          * 2) identify in each row
@@ -19,7 +19,7 @@ public class PatternPrintingExample {
          * -> types of elements in the column
          * 3) what do u need to print
          * Note : Try to find the formula relating the rows and cols
-         * 
+         *
          */
 
         n = 5;
@@ -168,15 +168,15 @@ public class PatternPrintingExample {
         }
         System.out.println();
 
-        n=5;
+        n = 5;
         System.out.println("8.2 2nd variation Diamond Pattern");
         for (int rows = 1; rows <= (n * 2) - 1; rows++) {
             int cols = rows > n ? (n * 2) - rows : rows;
             int spaces = n - cols;
-            for (int j = 0; j < spaces; j++){
+            for (int j = 0; j < spaces; j++) {
                 System.out.print("  ");
             }
-            for (int j = 0; j < cols; j++){
+            for (int j = 0; j < cols; j++) {
                 System.out.print("* ");
             }
             System.out.println();
@@ -189,11 +189,11 @@ public class PatternPrintingExample {
          *
          * * *
          * * * * *
-         * 
-         * 
+         *
+         *
          * n = 5;
          * System.out.println("9. Hourglass Pattern");
-         * 
+         *
          * System.out.println("1st Variation");
          * for (int rows = 0; rows < n; rows++) {
          * int k=1;
@@ -208,7 +208,7 @@ public class PatternPrintingExample {
          * System.out.println();
          * k++;
          * }
-         * 
+         *
          */
         System.out.println("9. Hourglass Pattern");
 
